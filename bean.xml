@@ -7,5 +7,5 @@
 
        <bean  id="emp"  class="com.mainapp.Employee">  </bean>
      <bean  id="man"  class="com.mainapp.Manager">  </bean>
-      <bean  id="std"  class="com.mainapp.Student">  </bean>
+      <bean  id="std"  class="com.mainapp.Student"   lazy-init="true">  </bean>
 </beans>

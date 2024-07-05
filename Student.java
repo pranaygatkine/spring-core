@@ -6,5 +6,7 @@ public class Student {
 
 		
 	}
-
+public void info() {
+	System.out.println("STD INFO>>>>>>>>>>>>>");
+}
 }

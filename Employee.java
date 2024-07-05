@@ -6,4 +6,7 @@ public class Employee {
 		System.out.println("EMP INST");
 		
 	}
+	public void info() {
+		System.out.println("EMP INFO>>>>>>>>>>>>>");
+	}
 }

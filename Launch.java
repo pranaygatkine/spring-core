@@ -1,18 +1,35 @@
 package com.mainapp;
 
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import java.util.Scanner;
 
-@SuppressWarnings("deprecation")
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Launch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Resource r = new ClassPathResource("bean.xml");
-XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(r);
+           Scanner sc = new Scanner(System.in);
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+		
 
-Employee emp = (Employee) xmlBeanFactory.getBean("emp");
+		System.out.println("enter key");
+		int key=sc.nextInt();
+		
+		Employee emp = (Employee) ac.getBean("emp");
+		emp.info();
+		
+		Manager man = (Manager) ac.getBean("man");
+		man.info();
+		
+		if(key==1212) {
+			Student std = (Student) ac.getBean("std");
+			std.info();
+		}
+		else
+		{
+			System.out.println("Wrong User");
+		}
+		
+		
 	}
 
 }

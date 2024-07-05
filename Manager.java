@@ -5,5 +5,7 @@ public class Manager {
 		System.out.println("MAN INST");
 
 	}
-
+	public void info() {
+		System.out.println("MAN INFO>>>>>>>>>>>>>");
+	}
 }
