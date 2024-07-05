@@ -5,7 +5,6 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-       <bean  id="emp"  class="com.mainapp.Employee">  </bean>
-     <bean  id="man"  class="com.mainapp.Manager">  </bean>
-      <bean  id="std"  class="com.mainapp.Student"   lazy-init="true">  </bean>
+       <bean  id="emp"  class="com.mainapp.Employee" scope="prototype">  </bean>
+     
 </beans>
