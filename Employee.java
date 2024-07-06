@@ -3,14 +3,29 @@ package com.mainapp;
 
 public class Employee {
 	
-	public Employee() {
-		System.out.println("BEAN INSTANTIATION");
-	}
+	private Account account;
 	
-
-     public void info() {
-		System.out.println("CUSTOM METHOD");
+	public Employee() {
 		
 	}
+	
+	
+	public Employee(Account account) {
+		super();
+		this.account = account;
+	}
+//constructor dependancy injection
+	
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	// setter dependancy injection
+	public void printDetails() {
+		account.accountInfo();
+		
+	}
+
+
 	
 }
