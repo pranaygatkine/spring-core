@@ -5,12 +5,22 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
+      <bean
+      
+      id="myfactoryclass"
+      class="com.mainapp.MyFactoryClass"
+      
+      >
+      </bean>
+      
+      
+      
        <bean
          id="emp"  
-         class="com.mainapp.Employee"
-         factory-method="getObj"
-        
-          > 
+         factory-bean="myfactoryclass"   
+         factory-method="getObj1"   
+             
+         > 
           </bean>
           
       
