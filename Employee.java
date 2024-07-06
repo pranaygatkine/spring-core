@@ -1,28 +1,30 @@
 package com.mainapp;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class Employee {
+public class Employee implements InitializingBean,DisposableBean{
 	static {
 		System.out.println("BEAN LOADING");
 	}
 	private Employee() {
 		System.out.println("BEAN INSTANTIATION");
 	}
-@PostConstruct
-	public void  myAnnoInit() {
-		System.out.println("RES-ALL: init");
-
-		
-	}
 	
-	public void info() {
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("RES-ALL: init");	}
+	
+     public void info() {
 		System.out.println("CUSTOM METHOD");
 		
 	}
-	@PreDestroy
-	public void myAnnoDestroy() {
+	@Override
+	public void destroy() throws Exception {
 		System.out.println("RES-DEALL: Destroy");
+		
 	}
+	
+	
 }

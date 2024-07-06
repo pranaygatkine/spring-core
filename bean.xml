@@ -12,9 +12,5 @@
           > 
           </bean>
           
-          <bean
-          class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"
-          >
-          </bean>
-     
+      
 </beans>
