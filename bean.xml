@@ -8,9 +8,13 @@
        <bean
          id="emp"  
          class="com.mainapp.Employee"
-         init-method="myXmlInit"
-         destroy-method="myXmlDestroy"
+        
           > 
+          </bean>
+          
+          <bean
+          class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"
+          >
           </bean>
      
 </beans>

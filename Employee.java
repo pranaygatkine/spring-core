@@ -1,24 +1,28 @@
 package com.mainapp;
 
-public class Employee {
-	
-	private int eid;
-	private String ename;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
-	public void setEid(int eid) {
-		this.eid = eid;
-	}
-	public void setEname(String ename) {
-		this.ename = ename;
+public class Employee {
+	static {
+		System.out.println("BEAN LOADING");
 	}
 	private Employee() {
-		System.out.println("EMP INST");
+		System.out.println("BEAN INSTANTIATION");
+	}
+@PostConstruct
+	public void  myAnnoInit() {
+		System.out.println("RES-ALL: init");
+
 		
 	}
+	
 	public void info() {
-		System.out.println("EMP INFO>>>>>>>>>>>>>");
-		System.out.println("EID=" +eid);
-		System.out.println("ENAME=" +ename);
-
+		System.out.println("CUSTOM METHOD");
+		
+	}
+	@PreDestroy
+	public void myAnnoDestroy() {
+		System.out.println("RES-DEALL: Destroy");
 	}
 }
