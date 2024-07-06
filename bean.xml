@@ -8,6 +8,7 @@
        <bean
          id="emp"  
          class="com.mainapp.Employee"
+         factory-method="getObj"
         
           > 
           </bean>
