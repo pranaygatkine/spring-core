@@ -5,31 +5,27 @@ import java.util.Map;
 
 public class Employee {
 	
-private Account account;
+
 private String url;
-private Map<String,String> driverName;
-public Account getAccount() {
-	return account;
-}
-public void setAccount(Account account) {
-	this.account = account;
-}
+private Map<String,Account> accinfo;
 public String getUrl() {
 	return url;
 }
 public void setUrl(String url) {
 	this.url = url;
 }
-public Map<String, String> getDriverName() {
-	return driverName;
+public Map<String, Account> getAccinfo() {
+	return accinfo;
 }
-public void setDriverName(Map<String, String> driverName) {
-	this.driverName = driverName;
+public void setAccinfo(Map<String, Account> accinfo) {
+	this.accinfo = accinfo;
 }
 @Override
 public String toString() {
-	return "Employee [account=" + account + ", url=" + url + ", driverName=" + driverName + "]";
+	return "Employee [url=" + url + ", accinfo=" + accinfo + "]";
 }
+
+
 
 
 

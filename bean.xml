@@ -5,24 +5,25 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-       <bean id="acc" class="com.mainapp.Account"> </bean> 
+       <bean id="acc1" class="com.mainapp.Account"> </bean> 
+            <bean id="acc2" class="com.mainapp.Account"> </bean> 
      
      <!-- by default linkedHashMap -->
        <bean id="emp" class="com.mainapp.Employee"> 
-              <property name="account" ref="acc"></property>
               <property name="url" value="jdbc:myql"></property>
-              <property name="driverName" ref="mymap" > </property>
+              <property name="accinfo" ref="mymap" > </property>
        </bean>
       
      <util:map id="mymap" map-class="java.util.HashMap">
      
      
-      <entry key="mysql" value="com.mysql"></entry>
-             <entry key="oracle" value="com.oracle"></entry>
+      <entry key="raju"  value-ref="acc1"></entry>
+             <entry key="kaju" value-ref="acc2"></entry>
      
      </util:map>
       
       </beans>
       
       <!-- to create HashMAp -->
+      <!-- own implimentation -->
 <!--through setter  injection  -->
