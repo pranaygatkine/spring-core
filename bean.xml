@@ -5,23 +5,23 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-      <bean
+       <bean id="acc" class="com.mainapp.Account"> </bean> 
+     
+     
+       <bean id="emp" class="com.mainapp.Employee"> 
+              <property name="account" ref="acc"></property>
+              <property name="url" value="jdbc:myql"></property>
+              <property name="databaseInfo" ref="mylist"> </property>
+       </bean>
       
-      id="myfactoryclass"
-      class="com.mainapp.MyFactoryClass"
+      <util:list id="mylist" list-class="java.util.LinkedList">
+                   <value>root</value>
+                      <value>root123</value>
+                      <value>com.mysql</value>
       
-      >
-      </bean>
+      </util:list>
       
+      </beans>
       
-      
-       <bean
-         id="emp"  
-         factory-bean="myfactoryclass"   
-         factory-method="getObj1"   
-             
-         > 
-          </bean>
-          
-      
-</beans>
+      <!-- to create linkedlist -->
+<!--through setter  injection  -->
