@@ -14,7 +14,7 @@ public class Launch {
 	
 		Employee emp = (Employee) ac.getBean("emp");
 		
-		System.out.println(emp.getAccinfo().getClass());
+		
 		System.out.println(emp);
 		
 	

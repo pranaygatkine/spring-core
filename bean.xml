@@ -5,25 +5,22 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-       <bean id="acc1" class="com.mainapp.Account"> </bean> 
-            <bean id="acc2" class="com.mainapp.Account"> </bean> 
-     
-     <!-- by default linkedHashMap -->
-       <bean id="emp" class="com.mainapp.Employee"> 
-              <property name="url" value="jdbc:myql"></property>
-              <property name="accinfo" ref="mymap" > </property>
-       </bean>
-      
-     <util:map id="mymap" map-class="java.util.HashMap">
-     
-     
-      <entry key="raju"  value-ref="acc1"></entry>
-             <entry key="kaju" value-ref="acc2"></entry>
-     
-     </util:map>
-      
+       <bean id="accinfo" class="com.mainapp.Account"> </bean> 
+       
+       
+       <util:list id="listofbooks" list-class="java.util.LinkedList">
+       
+             <value>hc warma</value>
+              <value>c programming</value>
+              <value>java programming</value>
+       
+       </util:list>
+       
+        <bean id="car" class="com.mainapp.Car" ></bean>
+        <bean id="emp" class="com.mainapp.Employee" autowire="byName"></bean>
+       
       </beans>
-      
-      <!-- to create HashMAp -->
+      <!-- autowire by name -->
+      <!-- to create linkedlist -->
       <!-- own implimentation -->
 <!--through setter  injection  -->
