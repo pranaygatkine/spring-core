@@ -11,18 +11,18 @@
        <bean id="emp" class="com.mainapp.Employee"> 
               <property name="account" ref="acc"></property>
               <property name="url" value="jdbc:myql"></property>
-              <property name="driverName"  >
-             <map>
-             <entry key="mysql" value="com.mysql"></entry>
-             <entry key="oracle" value="com.oracle"></entry>
-             
-             </map>
-              </property>
+              <property name="driverName" ref="mymap" > </property>
        </bean>
       
+     <util:map id="mymap" map-class="java.util.HashMap">
      
+     
+      <entry key="mysql" value="com.mysql"></entry>
+             <entry key="oracle" value="com.oracle"></entry>
+     
+     </util:map>
       
       </beans>
       
-      <!-- to create linkedlist -->
+      <!-- to create HashMAp -->
 <!--through setter  injection  -->
