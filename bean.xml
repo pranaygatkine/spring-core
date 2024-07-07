@@ -7,19 +7,20 @@
 
        <bean id="acc" class="com.mainapp.Account"> </bean> 
      
-     
+     <!-- by default linkedHashMap -->
        <bean id="emp" class="com.mainapp.Employee"> 
               <property name="account" ref="acc"></property>
               <property name="url" value="jdbc:myql"></property>
-              <property name="databaseInfo" ref="mylist"> </property>
+              <property name="driverName"  >
+             <map>
+             <entry key="mysql" value="com.mysql"></entry>
+             <entry key="oracle" value="com.oracle"></entry>
+             
+             </map>
+              </property>
        </bean>
       
-      <util:list id="mylist" list-class="java.util.LinkedList">
-                   <value>root</value>
-                      <value>root123</value>
-                      <value>com.mysql</value>
-      
-      </util:list>
+     
       
       </beans>
       
