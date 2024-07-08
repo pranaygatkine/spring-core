@@ -5,10 +5,10 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-       <bean id="accinfo" class="com.mainapp.Account"> </bean> 
+       <bean id="acc" class="com.mainapp.Account"> </bean> 
        
        
-       <util:list id="listofbooks" list-class="java.util.LinkedList">
+       <util:list id="books" list-class="java.util.LinkedList">
        
              <value>hc warma</value>
               <value>c programming</value>
@@ -16,11 +16,11 @@
        
        </util:list>
        
-        <bean id="car" class="com.mainapp.Car" ></bean>
-        <bean id="emp" class="com.mainapp.Employee" autowire="byName"></bean>
+        <bean id="becar" class="com.mainapp.Car" ></bean>
+        <bean id="emp" class="com.mainapp.Employee" autowire="byType"></bean>
        
       </beans>
-      <!-- autowire by name -->
+      <!-- autowire by Type -->
       <!-- to create linkedlist -->
       <!-- own implimentation -->
 <!--through setter  injection  -->
