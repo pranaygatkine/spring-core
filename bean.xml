@@ -7,22 +7,30 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
 	<!-- bean definitions here -->
-	<bean id="google" class="com.mainapp.Google">
-
-		<constructor-arg name="id" value="111"></constructor-arg>
-		<constructor-arg name="headOffice" value="London"></constructor-arg>
-		<constructor-arg name="listOfServiceCountry" ref="googleService"></constructor-arg>
+	<!-- ===========================superbean============================== -->
+	<bean id="superbean" abstract="true">
+			<constructor-arg name="headOffice" value="London"></constructor-arg>
+			<constructor-arg name="listOfServiceCountry" ref="googleService"></constructor-arg>
 	</bean>
-
+	
 	<util:list id="googleService"
 		list-class="java.util.LinkedList">
 		<value>INDIA</value>
 		<value>USA</value>
 		<value>CANADA</value>
 	</util:list>
+	<!--======================google service===================================  -->
+	 
+	<bean id="google" class="com.mainapp.Google" parent="superbean">
+        <constructor-arg name="id" value="111"></constructor-arg>
+		<constructor-arg name="extra" value="check"></constructor-arg>
+		
+	</bean>
+
+	
 	<!-- ++++++++++++++++++++++++For META+++++++++++++++++++++++++++++++++++++ -->
 
-	<bean id="meta" class="com.mainapp.Meta" parent="google">
+	<bean id="meta" class="com.mainapp.Meta" parent="superbean">
 
 		<constructor-arg name="id" value="888"></constructor-arg>
 		<constructor-arg name="empEmailName" ref="metaEmp"></constructor-arg>
@@ -38,4 +46,11 @@
 	</util:map>
 
 </beans>
-<!-- with  bean inheritance -->
+<!-- with   inheritance  abstract parent bean
+
+is use to two common bean with same data
+
+ceate seprate bean and same data insert in it
+and make it abstract
+
+-->
