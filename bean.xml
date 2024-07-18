@@ -5,27 +5,10 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-      <bean id="accinfo" class="com.mainapp.Account"> </bean>
-            
-       
-              <!-- it by default byType if it Found same name with 2 or more byType then it will check ByName  -->
-     <bean id="acc2" class="com.mainapp.Account"> </bean>
-       
-              
-       <util:list id="listofbooks" list-class="java.util.LinkedList">
-       
-             <value>hc warma</value>
-              <value>c programming</value>
-              <value>java programming</value>
-       
-       </util:list>
-       
-        <bean id="car" class="com.mainapp.Car" ></bean>
-        <!-- it by default byType if it Found same name with 2 or more byType then it will check ByName  -->
-        <bean id="emp" class="com.mainapp.Employee" autowire="constructor"></bean>
-       
-      </beans>
-      <!-- autowire by constructor -->
-      <!-- to create linkedlist -->
-      <!-- own implimentation -->
-<!--through setter  injection  -->
+                <!--  bean definitions here  -->
+<bean id="crud" class="com.mainapp.dao.Crud"/>
+<bean id="myService" class="com.mainapp.service.MyService" autowire="byName"> </bean>
+<bean id="controller" class="com.mainapp.controller.MyController" autowire="byName"> </bean>
+<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+<bean class="com.mainapp.postprocess.BeanPostProcessorImpl"/>
+ </beans>
