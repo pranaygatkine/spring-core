@@ -22,11 +22,9 @@
 	</util:list>
 	<!-- ++++++++++++++++++++++++For META+++++++++++++++++++++++++++++++++++++ -->
 
-	<bean id="meta" class="com.mainapp.Meta">
+	<bean id="meta" class="com.mainapp.Meta" parent="google">
 
 		<constructor-arg name="id" value="888"></constructor-arg>
-		<constructor-arg name="headOffice" value="London"></constructor-arg>
-		<constructor-arg name="listOfServiceCountry" ref="metaService"></constructor-arg>
 		<constructor-arg name="empEmailName" ref="metaEmp"></constructor-arg>
 
 	</bean>
@@ -39,10 +37,5 @@
 
 	</util:map>
 
-	<util:list id="metaService" list-class="java.util.LinkedList">
-		<value>INDIA</value>
-		<value>USA</value>
-		<value>CANADA</value>
-	</util:list>
 </beans>
-<!-- with out bean inheritance -->
+<!-- with  bean inheritance -->
