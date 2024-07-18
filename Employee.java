@@ -9,6 +9,16 @@ public class Employee {
 private Account accinfo;
 private Car car;
 private List<String> listofbooks;
+
+
+
+
+public Employee(Account accinfo, Car car, List<String> listofbooks) {
+	super();
+	this.accinfo = accinfo;
+	this.car = car;
+	this.listofbooks = listofbooks;
+}
 public Account getAccinfo() {
 	return accinfo;
 }

@@ -5,11 +5,14 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-       <bean id="acc1" class="com.mainapp.Account"> </bean> 
-       <bean id="acc2" class="com.mainapp.Account" autowire-candidate="false"> </bean> 
-       <!-- if two byType with same id problem occure.. you will one false .......with byName this problem not occure id not duplicate  -->
+      <bean id="accinfo" class="com.mainapp.Account"> </bean>
+            
        
-       <util:list id="books" list-class="java.util.LinkedList">
+              <!-- it by default byType if it Found same name with 2 or more byType then it will check ByName  -->
+     <bean id="acc2" class="com.mainapp.Account"> </bean>
+       
+              
+       <util:list id="listofbooks" list-class="java.util.LinkedList">
        
              <value>hc warma</value>
               <value>c programming</value>
@@ -17,11 +20,12 @@
        
        </util:list>
        
-        <bean id="becar" class="com.mainapp.Car" ></bean>
-        <bean id="emp" class="com.mainapp.Employee" autowire="byType"></bean>
+        <bean id="car" class="com.mainapp.Car" ></bean>
+        <!-- it by default byType if it Found same name with 2 or more byType then it will check ByName  -->
+        <bean id="emp" class="com.mainapp.Employee" autowire="constructor"></bean>
        
       </beans>
-      <!-- autowire by Type -->
+      <!-- autowire by constructor -->
       <!-- to create linkedlist -->
       <!-- own implimentation -->
 <!--through setter  injection  -->
