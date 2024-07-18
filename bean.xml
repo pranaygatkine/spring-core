@@ -5,8 +5,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
-       <bean id="acc" class="com.mainapp.Account"> </bean> 
-       
+       <bean id="acc1" class="com.mainapp.Account"> </bean> 
+       <bean id="acc2" class="com.mainapp.Account" autowire-candidate="false"> </bean> 
+       <!-- if two byType with same id problem occure.. you will one false .......with byName this problem not occure id not duplicate  -->
        
        <util:list id="books" list-class="java.util.LinkedList">
        
